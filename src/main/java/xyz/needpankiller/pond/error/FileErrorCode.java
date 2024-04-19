@@ -1,5 +1,6 @@
 package xyz.needpankiller.pond.error;
 
+import xyz.needpankiller.pond.lib.exceptions.ErrorCode;
 import xyz.needpankiller.pond.lib.http.HttpStatus;
 
 

@@ -37,6 +37,7 @@ public class FileController {
     public Uni<Response> download(@PathParam("UUID") String uuid) throws IOException {
 
         Uni<FileInfo> fileInfoUni = fileService.selectFile(uuid);
+
         Uni<String> fileNameUni = fileInfoUni.map(FileInfo::getOriginalFileName).map(String::trim)
                 .map(s -> URLEncoder.encode(s, StandardCharsets.UTF_8).replaceAll("\\+", "%20"))
                 .map(s -> "attachment; filename=" + new String(s.getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1) + ";");
