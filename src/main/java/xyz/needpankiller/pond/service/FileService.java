@@ -1,5 +1,6 @@
 package xyz.needpankiller.pond.service;
 
+import io.quarkus.hibernate.reactive.panache.common.WithSession;
 import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.ext.Provider;
@@ -28,11 +29,12 @@ public class FileService {
 
     @Inject
     private FileEntityRepository fileEntityRepository;
-    @Channel("__timber__topic-file-stored")
+    @Channel("timber__topic-file-stored")
     private Emitter<FileInfo> fileInfoEmitter;
 
+    @WithSession
     public Uni<FileInfo> selectFile(String uuid) {
-        return fileEntityRepository.find("uuid", uuid).singleResult()
+        return fileEntityRepository.find("SELECT f FROM FileEntity f WHERE f.uuid = '" + uuid+"'").singleResult()
                 .onItem().ifNotNull().transform(this::mapFileInfo)
                 .onItem().ifNull().failWith(new FileException(FILE_DOWNLOAD_FILE_INFO_NOT_EXIST));
     }
@@ -93,10 +95,5 @@ public class FileService {
         }
         return fileInfoList;
     }
-
-    public void sendFileInfo(FileInfo fileInfo) {
-
-    }
-
 }
 

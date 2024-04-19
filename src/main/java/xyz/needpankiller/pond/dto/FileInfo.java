@@ -1,6 +1,7 @@
 package xyz.needpankiller.pond.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
 import org.jboss.resteasy.reactive.server.multipart.FileItem;
 
 import java.io.IOException;
@@ -17,6 +18,7 @@ public class FileInfo implements Serializable {
     private Long fileSize;
     private String originalFileName;
     private String changedFileName;
+    private Long createdBy;
     @JsonIgnore
     private FileItem fileItem;
     @JsonIgnore
@@ -75,6 +77,14 @@ public class FileInfo implements Serializable {
         this.changedFileName = changedFileName;
     }
 
+    public Long getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(Long createdBy) {
+        this.createdBy = createdBy;
+    }
+
     public FileItem getFileItem() {
         return fileItem;
     }
@@ -88,12 +98,12 @@ public class FileInfo implements Serializable {
         }
     }
 
-    public void setHeaders(Map<String, List<String>> headers) {
-        this.headers = headers;
-    }
-
     public Map<String, List<String>> getHeaders() {
         return headers;
+    }
+
+    public void setHeaders(Map<String, List<String>> headers) {
+        this.headers = headers;
     }
 
 
