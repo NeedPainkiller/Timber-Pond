@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ua_parser.Client;
 import ua_parser.Parser;
+import xyz.needpankiller.pond.helper.TimeHelper;
 import xyz.needpankiller.pond.lib.http.AuditLogMessage;
 import xyz.needpankiller.pond.lib.http.HttpMethod;
 import xyz.needpankiller.pond.lib.http.HttpStatus;
@@ -81,6 +82,7 @@ public class KafkaAuditService {
         auditLogMessage.setRequestPayLoad(requestPayload);
         auditLogMessage.setResponsePayLoad(responsePayload);
 
+        auditLogMessage.setCreatedDate(TimeHelper.now());
 
         Long tenantPk = null;
         Long userPk = null;
