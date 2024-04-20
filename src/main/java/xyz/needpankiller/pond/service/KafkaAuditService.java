@@ -30,7 +30,6 @@ import java.util.Map;
 
 @Provider
 @ApplicationScoped
-//@Priority(Interceptor.Priority.PLATFORM_AFTER)
 public class KafkaAuditService {
     private static final Logger logger = LoggerFactory.getLogger(KafkaAuditService.class);
 

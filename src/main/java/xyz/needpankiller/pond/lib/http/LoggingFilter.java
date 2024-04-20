@@ -17,7 +17,7 @@ import java.io.IOException;
 import static xyz.needpankiller.pond.lib.security.JsonWebTokenProvider.BEARER_TOKEN_HEADER;
 
 @Provider
-//@Priority(Interceptor.Priority.PLATFORM_AFTER)
+@Priority(Interceptor.Priority.PLATFORM_AFTER)
 public class LoggingFilter implements ContainerResponseFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
