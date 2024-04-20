@@ -6,7 +6,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.annotation.Nullable;
+import jakarta.annotation.Priority;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.interceptor.Interceptor;
 import jakarta.ws.rs.ext.Provider;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
@@ -26,6 +29,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Provider
+@ApplicationScoped
+//@Priority(Interceptor.Priority.PLATFORM_AFTER)
 public class KafkaAuditService {
     private static final Logger logger = LoggerFactory.getLogger(KafkaAuditService.class);
 
@@ -45,8 +50,8 @@ public class KafkaAuditService {
         objectMapper.registerModule(new JavaTimeModule());
         return objectMapper;
     }
-//    @Channel("timber__topic-audit-api")
-//    Emitter<AuditLogMessage> auditApiEmitter;
+    @Channel("timber__topic-audit-api")
+    Emitter<AuditLogMessage> auditApiEmitter;
 
 
     public void emit(HttpMethod httpMethod, int statusCode,
@@ -132,7 +137,7 @@ public class KafkaAuditService {
         logger.info("{}", auditLogMessage);
 
 
-//        auditApiEmitter.send(auditLogMessage);
+        auditApiEmitter.send(auditLogMessage);
     }
 }
 

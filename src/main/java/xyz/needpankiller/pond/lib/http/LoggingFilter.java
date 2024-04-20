@@ -1,6 +1,8 @@
 package xyz.needpankiller.pond.lib.http;
 
+import jakarta.annotation.Priority;
 import jakarta.inject.Inject;
+import jakarta.interceptor.Interceptor;
 import jakarta.ws.rs.container.ContainerRequestContext;
 import jakarta.ws.rs.container.ContainerResponseContext;
 import jakarta.ws.rs.container.ContainerResponseFilter;
@@ -14,7 +16,7 @@ import java.io.IOException;
 
 import static xyz.needpankiller.pond.lib.security.JsonWebTokenProvider.BEARER_TOKEN_HEADER;
 
-//@Provider
+@Provider
 //@Priority(Interceptor.Priority.PLATFORM_AFTER)
 public class LoggingFilter implements ContainerResponseFilter {
 
