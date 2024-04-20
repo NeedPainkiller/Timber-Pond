@@ -3,7 +3,7 @@ package xyz.needpankiller.pond.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import io.quarkus.hibernate.reactive.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
@@ -21,15 +21,14 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
 
 @DynamicUpdate
 @Table(name = "FILES")
-public class FileEntity implements Serializable {
+public class FileEntity implements Serializable  {
 
     @Serial
     private static final long serialVersionUID = 7712851434957355922L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "_ID")
-    protected Long id;
+    public Long id;
     @Column(name = "UUID")
     protected String uuid;
     @Convert(converter = BooleanConverter.class)

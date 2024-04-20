@@ -1,6 +1,6 @@
 package xyz.needpankiller.pond.dao;
 
-import io.quarkus.hibernate.reactive.panache.PanacheRepository;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import xyz.needpankiller.pond.entity.FileEntity;
 

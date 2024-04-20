@@ -22,9 +22,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-websockets'
     implementation 'io.quarkus:quarkus-logging-json'
     implementation 'io.quarkus:quarkus-hibernate-orm-rest-data-panache'
-    implementation 'io.quarkus:quarkus-hibernate-reactive-panache'
-    implementation 'io.quarkus:quarkus-reactive-mysql-client'
-    implementation 'io.quarkus:quarkus-jdbc-mysql'
+     implementation 'io.quarkus:quarkus-jdbc-mysql'
     implementation 'io.quarkus:quarkus-smallrye-health'
     implementation 'io.quarkus:quarkus-arc'
 
@@ -34,6 +32,9 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
     implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.14.2'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2'
+    implementation 'com.github.ua-parser:uap-java:1.5.4'
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'

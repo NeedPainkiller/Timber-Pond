@@ -7,9 +7,9 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.resteasy.reactive.server.multipart.FileItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import xyz.needpankiller.pond.dto.FileInfo;
 import xyz.needpankiller.pond.error.FileException;
 import xyz.needpankiller.pond.helper.FileHelper;
-import xyz.needpankiller.pond.dto.FileInfo;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -44,14 +44,6 @@ public final class NormalStorageService extends StorageService {
         super(realPathToSaved, sizeUsableLimit, sizeUploadLimit);
         this.restrictList = restrictList;
     }
-
-//    @Inject
-//    public NormalStorageService() {
-//        this.realPathToSaved = "/files/";
-//        this.sizeUsableLimit = 1073741824L;
-//        this.sizeUploadLimit = 52428800L;
-//        this.restrictList = Arrays.asList("exe","sh","js","ps1","bat","jsp","html","htm","php","cer","asp","pki","war","jar");
-//    }
 
     /**
      * 파일 저장
