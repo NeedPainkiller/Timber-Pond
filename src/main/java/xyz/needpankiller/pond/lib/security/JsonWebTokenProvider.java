@@ -1,4 +1,4 @@
- package xyz.needpankiller.pond.lib.security;
+package xyz.needpankiller.pond.lib.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
@@ -17,13 +17,18 @@ import java.util.function.Function;
 import static xyz.needpankiller.pond.lib.exceptions.CommonErrorCode.*;
 
 @Provider
-public class JsonWebTokenProvider {
+public final class JsonWebTokenProvider {
     private static Logger logger = LoggerFactory.getLogger(JsonWebTokenProvider.class);
     public static final String BEARER_TOKEN_HEADER = "X-Authorization";
     protected static final String KEY_TENANT_PK = "tenant-pk";
     protected static final String KEY_USER_PK = "user-pk";
+    protected static final String KEY_USER_ID = "user-id";
+    protected static final String KEY_USER_NAME = "user-name";
+    protected static final String KEY_USER_EMAIL = "user-email";
     protected static final String KEY_ROLE_LIST = "role-list";
-    protected final SecretKey secretKey;
+    protected static final String KEY_TEAM_PK = "team-pk";
+    protected static final String KEY_TEAM_NAME = "team-name";
+    private final SecretKey secretKey;
 
     protected JsonWebTokenProvider(@ConfigProperty(name = "jwt.secret-key") String secretKeyStr) {
         if (secretKeyStr == null || secretKeyStr.isEmpty()) {
@@ -61,6 +66,37 @@ public class JsonWebTokenProvider {
 
     public String getUserId(String token) {
         return getClaimFromToken(token, Claims::getSubject);
+    }
+    public String getUserName(String token) {
+        Object claim = getClaimFromToken(token, claims -> claims.get(KEY_USER_NAME));
+        if (claim == null) {
+            throw new TokenValidFailedException(TOKEN_CLAIM_TENANT_NOT_EXIST);
+        }
+        return claim.toString();
+    }
+
+    public String getUserEmail(String token) {
+        Object claim = getClaimFromToken(token, claims -> claims.get(KEY_USER_EMAIL));
+        if (claim == null) {
+            throw new TokenValidFailedException(TOKEN_CLAIM_TENANT_NOT_EXIST);
+        }
+        return claim.toString();
+    }
+
+    public Long getTeamPk(String token) {
+        Object claim = getClaimFromToken(token, claims -> claims.get(KEY_TEAM_PK));
+        if (claim == null) {
+            throw new TokenValidFailedException(TOKEN_CLAIM_TENANT_NOT_EXIST);
+        }
+        return ((Integer) claim).longValue();
+    }
+
+    public String getTeamName(String token) {
+        Object claim = getClaimFromToken(token, claims -> claims.get(KEY_TEAM_NAME));
+        if (claim == null) {
+            throw new TokenValidFailedException(TOKEN_CLAIM_TENANT_NOT_EXIST);
+        }
+        return claim.toString();
     }
 
 
