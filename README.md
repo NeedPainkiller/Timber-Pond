@@ -1,15 +1,27 @@
+
 # Timber Pond
+
+<p align="center">
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=TIMBER%20POND&fontSize=90&animation=fadeIn&fontAlignY=38&desc=File%20Management%20for%20Timber%20Framework&descAlignY=51&descAlign=62"/>
+</p>
 
 <p align="center">
   <a href="https://github.com/NeedPainkiller/Timber" target="blank"><img src="./img/timber-logo.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
+<p align="center">
+<img src="https://img.shields.io/badge/Java-67493A?style=flat-square&logo=OpenJDK&logoColor=white"/>
+<img src="https://img.shields.io/badge/Quarkus-4695EB?style=flat-square&logo=quarkus&logoColor=white"/>
+<img src="https://img.shields.io/badge/Panache-1E404E?style=flat-square&logo=OpenJDK&logoColor=white"/>
+<img src="https://img.shields.io/badge/Apache Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white"/>
+<img src="https://img.shields.io/badge/ReactiveX-B7178C?style=flat-square&logo=ReactiveX&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+</p>
 
 > **_NOTE:_**  한국어 설명은 아래에 있습니다.
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project uses Quarkus, the Supersonic Subatomic Java Framework, it is a part of the [Timber](https://github.com/NeedPainkiller/Timber) Framework.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
 ## Description
 File Management for [Timber](https://github.com/NeedPainkiller/Timber) Framework
