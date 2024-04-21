@@ -1,8 +1,26 @@
-# Timber-Pond
+# Timber Pond
+
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/timber-logo.svg" width="200" alt="Nest Logo" /></a>
+</p>
+
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
+## Description
+File Management for [Timber](https://github.com/NeedPainkiller/Timber) Framework
+
+## Requirements
+- <img src="https://img.shields.io/badge/Java-67493A?style=flat-square&logo=OpenJDK&logoColor=white"/>
+- <img src="https://img.shields.io/badge/Quarkus-4695EB?style=flat-square&logo=quarkus&logoColor=white"/>
+- <img src="https://img.shields.io/badge/Panache-1E404E?style=flat-square&logo=OpenJDK&logoColor=white"/>
+- <img src="https://img.shields.io/badge/Apache Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white"/>
+- <img src="https://img.shields.io/badge/ReactiveX-B7178C?style=flat-square&logo=ReactiveX&logoColor=white"/>
+- <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+
+
 
 ## Running the application in dev mode
 
@@ -59,31 +77,23 @@ If you want to learn more about building native executables, please consult http
 - Logging JSON ([guide](https://quarkus.io/guides/logging#json-logging)): Add JSON formatter for console logging
 - Apache Kafka Streams ([guide](https://quarkus.io/guides/kafka-streams)): Implement stream processing applications based on Apache Kafka
 
-## Provided Code
 
-### YAML Config
+## Support
 
-Configure your application with YAML
+Timber-Pond is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-[Related guide section...](https://quarkus.io/guides/config-reference#configuration-examples)
+## Stay in touch
+<p>
+  <a href="https://home.needpainkiller.xyz/" target="_blank"><img src="https://img.shields.io/badge/Home-EF3346?style=flat-square&logo=googlehome&logoColor=white"/></a>
+  <a href="https://blog.needpainkiller.xyz/" target="_blank"><img src="https://img.shields.io/badge/Blog-15171A?style=flat-square&logo=Ghost&logoColor=white"/></a>
+  <a href="mailto:kam6512@gmail.com" target="_blank"><img src="https://img.shields.io/badge/kam6512@gmail.com-EA4335?style=flat-square&logo=Gmail&logoColor=white"/></a>
+  <a href="mailto:needpainkiller6512@gmail.com" target="_blank"><img src="https://img.shields.io/badge/needpainkiller6512@gmail.com-EA4335?style=flat-square&logo=Gmail&logoColor=white"/></a>
+</p>
 
-The Quarkus application configuration is located in `src/main/resources/application.yml`.
+- Author - [NeedPainkiller](https://home.needpainkiller.xyz/)
+- Blog - [https://blog.needpainkiller.xyz](https://blog.needpainkiller.xyz/)
+- Github - [@PainKiller](https://github.com/NeedPainkiller)
 
-### Messaging codestart
+## License
 
-Use Quarkus Messaging
-
-[Related Apache Kafka guide section...](https://quarkus.io/guides/kafka-reactive-getting-started)
-
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
-
-### WebSockets
-
-WebSocket communication channel starter code
-
-[Related guide section...](https://quarkus.io/guides/websockets)
+Timber-Pond is [MIT licensed](LICENSE).
